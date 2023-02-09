@@ -25,8 +25,8 @@ const Header = () => {
 const Body = () => {
   return (
     <div className="offer-list">
-      <OffersCard offer={offerlist[0]}/>
-      <OffersCard offer={offerlist[1]}/>
+      <OffersCard {...offerlist[0]}/>
+      <OffersCard {...offerlist[1]}/>
      
     </div>
   )
@@ -83,13 +83,13 @@ const offerlist = [
   rating:"4.2"
 },
  ]
-const OffersCard =({offer}) => {
+const OffersCard =({name, rating, cusines}) => {
   return (
     <div className="offers-cart">
       <img   src="https://moneyexcel.com/images/special_offers.png" alt="Icon"/>
-      <h2>{offer?.name}</h2>
-      <h3>{offer.cusines.join(" , ")}</h3>
-      <h4>{offer?.rating} stars</h4>
+      <h2>{name}</h2>
+      <h3>{cusines.join(" , ")}</h3>
+      <h4>{rating} stars</h4>
     </div>
   )
 }
