@@ -25,8 +25,11 @@ const Header = () => {
 const Body = () => {
   return (
     <div className="offer-list">
-      <OffersCard {...offerlist[0]}/>
-      <OffersCard {...offerlist[1]}/>
+      {
+        offerlist.map(offer => {
+          return <OffersCard {...offer}/>
+        })
+      }
      
     </div>
   )
