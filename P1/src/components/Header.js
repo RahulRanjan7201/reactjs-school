@@ -1,9 +1,9 @@
 import { useState } from 'react'
-
+import {Link} from 'react-router-dom'
  const Title = () => 
     (
     <a href="/">
-  <img className="logo" src={require('../../icon.png')} alt="Icon"/>
+  <img className="logo" src={require('../assets/imgs/icon.png')} alt="Icon"/>
   </a>
 )
 
@@ -17,8 +17,12 @@ const Header = () => {
         <h1>{title}</h1>
        <div className="nav-items">
         <ul>
+          <Link to="\">
           <li>Home</li>
-          <li>About</li>
+          </Link>
+          <Link to="/about">
+          <li >About</li>
+          </Link>
           <li>Contact</li>
           <li>Cart</li>
         </ul>
