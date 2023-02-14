@@ -18,11 +18,14 @@
     
 }
 .offers-cart {
-    /* width: 30vw; */
+    width: 200px;
     border: 1px solid black;
     padding: 10px;
     margin: 10px;
 }
+.offers-cart > img {
+        width: 100%;
+    }
 .offer-list {
     display: flex;
     flex-wrap: wrap;
