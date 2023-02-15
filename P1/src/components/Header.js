@@ -17,13 +17,15 @@ const Header = () => {
         <h1>{title}</h1>
        <div className="nav-items">
         <ul>
-          <Link to="\">
+          <Link to="/">
           <li>Home</li>
           </Link>
           <Link to="/about">
           <li >About</li>
           </Link>
+          <Link to="/contact">
           <li>Contact</li>
+          </Link>
           <li>Cart</li>
         </ul>
        </div>

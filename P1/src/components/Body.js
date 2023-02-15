@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {  offerlist } from "../config";
 import OffersCard from "../components/OfferCard";
 import Shimmer from "../components/Shimmer";
+import { Link } from "react-router-dom";
 
 function filterData(searchText, offerlist) {
  const data =  offerlist.filter(offer => offer?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()))
@@ -39,7 +40,13 @@ const Body = () => {
       <div className="offer-list">
         {
           filterOffer.map(offer => {
-            return <OffersCard {...offer.data}/>
+            return (
+              <Link to={"offer/"+ offer.data.id}>
+                 <OffersCard {...offer.data}/>
+              </Link>
+            )
+            
+           
           })
         }
        
