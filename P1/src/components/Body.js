@@ -10,6 +10,7 @@ function filterData(searchText, offerlist) {
  return data;
 }
 const Body = () => {
+  
     const [searchText, setSearchTest] = useState("");
     let [searchClicked, setSearchClicked] = useState(false);
     const [offers, setOffers] = useState([])
