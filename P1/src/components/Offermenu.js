@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { imageCDNURL } from "../config";
+import useOffer from "../utils/useOffer";
 import Shimmer from "./Shimmer";
 const Offermenu = () => {
   const {id} = useParams();
-  const [offer, setOffer] = useState(null)
-  useEffect(() => {
-    getOfferInfo();
-  },[]);
-  async function getOfferInfo() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=" +
-        id
-    );
-    const json = await data.json();
-    setOffer(json.data);
-  }
+  const offer = useOffer(id);
+
   return (!offer) ? <Shimmer/> :  (
     <div className="menu">
         <div>
