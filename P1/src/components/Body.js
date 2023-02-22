@@ -29,11 +29,14 @@ const Body = () => {
     }
     if(!offers) return <h1>All offers are not there</h1>
     if(filterOffer?.length ==0 && offers?.length !=0) return <h1>No Match Found</h1>
+    const searchButtonCss = {
+      backgroundColor:"red"
+    }
     return (offers?.length ===0 )? <Shimmer/> : (
         <>
         <div className="search-container">
             <input type="text" placeholder="search" value={searchText} onChange={(e)=> setSearchTest(e.target.value)}/>
-            <button className="search-btn" onClick={() =>{
+            <button style={searchButtonCss} onClick={() =>{
               searchClicked = !searchClicked
               setSearchClicked(searchClicked)
              const data =  filterData(searchText, offers)
