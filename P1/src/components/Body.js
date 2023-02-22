@@ -36,7 +36,9 @@ const Body = () => {
         <>
         <div className="search-container">
             <input type="text" placeholder="search" value={searchText} onChange={(e)=> setSearchTest(e.target.value)}/>
-            <button style={searchButtonCss} onClick={() =>{
+            <button style={{
+      backgroundColor:"red"
+    }} onClick={() =>{
               searchClicked = !searchClicked
               setSearchClicked(searchClicked)
              const data =  filterData(searchText, offers)
