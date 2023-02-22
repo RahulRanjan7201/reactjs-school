@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Body from './components/Body'
 import Footer from "./components/Footer";
 import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
-import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Offermenu from "./components/Offermenu";
@@ -14,6 +13,7 @@ import Shimmer from "./components/Shimmer";
 
 
 const InstaMart = lazy(()=> import("./components/InstaMart"))
+const About = lazy(() => import("./components/About"))
 const AppLayout = () => {
   return (
     <>
@@ -35,7 +35,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path:"/about",
-        element:<About/>,
+        element:<Suspense fallback={<div>Loading ...</div>}><About/></Suspense>,
         children:[
           {
             path:"profile",
