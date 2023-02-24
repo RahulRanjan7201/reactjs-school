@@ -34,18 +34,16 @@ const Body = () => {
     }
     return (offers?.length ===0 )? <Shimmer/> : (
         <>
-        <div className="search-container">
-            <input type="text" placeholder="search" value={searchText} onChange={(e)=> setSearchTest(e.target.value)}/>
-            <button style={{
-      backgroundColor:"red"
-    }} onClick={() =>{
+        <div className="search-container p-5 bg-pink-50 my-5">
+            <input className="focus:bg-green-200 p-2 m-2" type="text" placeholder="search" value={searchText} onChange={(e)=> setSearchTest(e.target.value)}/>
+            <button className="p-2 m-2 bg-purple-800 text-white rounded-md" onClick={() =>{
               searchClicked = !searchClicked
               setSearchClicked(searchClicked)
              const data =  filterData(searchText, offers)
              setFilterOffer(data)
             } }>Search</button>
         </div>
-      <div className="offer-list">
+      <div className="flex flex-wrap">
         {
           filterOffer.map(offer => {
             return (

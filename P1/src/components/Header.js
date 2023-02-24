@@ -4,7 +4,7 @@ import useOnline from '../utils/useOnline'
  const Title = () => 
     (
     <a href="/">
-  <img className="logo" src={require('../assets/imgs/icon.png')} alt="Icon"/>
+  <img className="h-28 p-2" src={require('../assets/imgs/icon.png')} alt="Icon"/>
   </a>
 )
 
@@ -12,25 +12,23 @@ import useOnline from '../utils/useOnline'
 const Header = () => {
   let [isloggedIn, setIsLoggedIn] = useState(false)
   const isOnline = useOnline();
-  const title ="Discount Villa"
     return (
-      <div className="header">
+      <div className="flex justify-between bg-pink-50 shadow-lg sm:bg-blue-50">
         <Title/>
-        <h1>{title}</h1>
        <div className="nav-items">
-        <ul>
+        <ul className='flex py-10 '>
           <Link to="/">
-          <li>Home</li>
+          <li className='px-10'>Home</li>
           </Link>
           <Link to="/about">
-          <li >About</li>
+          <li  className='px-10'>About</li>
           </Link>
           <Link to="/contact">
-          <li>Contact</li>
+          <li  className='px-10'>Contact</li>
           </Link>
-          <li>Cart</li>
+          <li  className='px-10'>Cart</li>
           <Link to="/instamart">
-          <li>InstaMart</li>
+          <li  className='px-10'>InstaMart</li>
           </Link>
         </ul>
        </div>
