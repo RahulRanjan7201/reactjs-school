@@ -1,5 +1,5 @@
 import { useState } from 'react'
-const Section =({title, description , isVisible}) => {
+const Section =({title, description , isVisible, setIsVisible}) => {
   // const [isVisible, setIsVisible] =useState(false);
   return (
     <div className="border border-black p-2 m-2">
@@ -29,8 +29,18 @@ const Section =({title, description , isVisible}) => {
   })
 return (   <div>
      <h1 className="text-3xl p-2 m-2 font-bold"> Insta Mart</h1>
-       <Section title={"About Insta Mart "} description={"This is about section"} isVisible={true}/>
-       <Section title={"Team  "} description={"Team Insta Mart"} isVisible={false}/>
+       <Section title={"About Insta Mart "} description={"This is about section"} isVisible={sectionConfig.showAbout}
+       setIsVisible = {() =>setSectionConfig({
+        showAbout:true, 
+        showTeam:false
+       })}
+       />
+       <Section title={"Team  "} description={"Team Insta Mart"} isVisible={sectionConfig.showTeam}
+       setIsVisible = {() =>setSectionConfig({
+        showAbout:false, 
+        showTeam:true
+       })}
+       />
      </div>
 )
  }
