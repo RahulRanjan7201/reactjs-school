@@ -2,17 +2,7 @@ import { Outlet } from "react-router-dom";
 import Profile from "./ProfileClass";
 import ProfileFunctionComponent from './Profile'
 import React from "react";
-// const About2 = () => {
-//     return (
-//         <div>
-//             <h1>About us Page</h1>
-//             <p>This is the New daily service provider</p>
-//             <ProfileFunctionComponent name={"Rahul"}/>
-//             <Profile name={"Rahul"}/>
-//             <Outlet/>
-//         </div>
-//     )
-// }
+import UserContext from "../utils/userContext";
 class About extends React.Component {
     constructor(props) {
         super(props)
@@ -25,6 +15,12 @@ class About extends React.Component {
         console.log("render")
         return (
             <div>
+                <UserContext.Consumer>
+                    {({user}) => ( 
+                    <h1 className="font-bold text-xl p-10">{user?.name}</h1>
+                    )
+                    }
+                </UserContext.Consumer>
             <h1>About us Page</h1>
             <p>This is the New daily service provider</p>
             <ProfileFunctionComponent name={"Rahul"}/>
